@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 /**
-*function- Print positive, zero or negative number
+*main- Print positive, zero or negative number
 *@name: Print positive, zero or negative number
 *Return: Always return 1
 */
