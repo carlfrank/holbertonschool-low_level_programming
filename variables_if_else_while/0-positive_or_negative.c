@@ -3,7 +3,6 @@
 #include <stdio.h>
 /**
 *main- Print positive, zero or negative number
-*@name: Print positive, zero or negative number
 *Return: Always return 1
 */
 int main(void)
