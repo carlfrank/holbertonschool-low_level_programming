@@ -20,5 +20,5 @@ for (ALPHA = 'A'; ALPHA <= 'Z'; ALPHA++)
 }
 }
 putchar('\n');
-return(0);
+return (0);
 }
