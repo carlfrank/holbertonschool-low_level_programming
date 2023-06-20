@@ -10,8 +10,9 @@
 int main(void)
 {
 	int n;
+
 	for (n = 0; n < 10; n++)
-	putchar(n);
-	putchar('\n');
+		printf(n);
+	printf('\n');
 	return (0);
 }
