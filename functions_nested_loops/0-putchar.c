@@ -7,8 +7,6 @@
 
 int main(void)
 {
-char *x = "_putchar";
-{
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
@@ -16,9 +14,6 @@ char *x = "_putchar";
 	_putchar('c');
 	_putchar('h');
 	_putchar('a');
-	_putchar('\n');
-	return (0);
-}
 	_putchar('\n');
 	return (0);
 }
