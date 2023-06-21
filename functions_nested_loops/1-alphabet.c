@@ -14,5 +14,4 @@ char low;
 	_putchar(low);
 	}
 	_putchar('\n');
-	return (0);
 }
