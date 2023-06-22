@@ -2,7 +2,7 @@
 
 /**
 * print_last_digit- prints the last digit
-* @n- the number to be treated
+* @n: the number to be treated
 * Return: value of the last digit of number
 */
 
@@ -21,4 +21,3 @@ int print_last_digit(int n)
 
 	return (last);
 }
-
