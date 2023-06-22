@@ -5,12 +5,12 @@
  * @c: The character to be checked
  * Return: absolute value of number of zero
  */
-int_abs(int n)
+int_abs(int c)
 {
-    if (n < 0)
+    if (c < 0)
+	{
+		int abs_val;
+		return (abs_val);
+		return (c);
 	}
-    return -n;
-    }
-	else
-    return n;
 }
