@@ -11,7 +11,7 @@ int _isalpha(char c)
 	{
 	return (1);
 	}
-	else if ((C >= 65) && (C <= 90))
+	else if ((c >= 65) && (c <= 90))
 	{
 	return (1);
 	}
