@@ -5,7 +5,7 @@
  * @n: The character to be checked
  * Return: absolute value of number of zero
  */
-int_abs(int n)
+int _abs(int n)
 {
 	int absolute;
 
