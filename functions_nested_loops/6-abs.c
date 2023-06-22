@@ -1,16 +1,19 @@
 #include "main.h"
 
 /**
- * int_abs- computes the absolute value of an integer
- * @c: The character to be checked
+ * _abs- computes the absolute value of an integer
+ * @n: The character to be checked
  * Return: absolute value of number of zero
  */
-int_abs(int c)
+int_abs(int n)
 {
-    if (c < 0)
+	int absolute;
+
+	if (n < 0)
 	{
-		int abs_val;
-		return (abs_val);
-		return (c);
+	absolute = n * (-1);
 	}
+	else
+	absolute = n;
+	return (absolute);
 }
