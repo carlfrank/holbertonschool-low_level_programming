@@ -15,7 +15,7 @@ void print_most_numbers(void)
 	{
 	continue;
 	}
-	else
+	else if
 	{
 	putchar(x + '0');
 	}
