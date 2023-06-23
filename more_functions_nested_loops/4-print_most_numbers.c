@@ -21,5 +21,6 @@ void print_most_numbers(void)
 	{
 	putchar(x + '0');
 	}
+	}
 	putchar('\n');
 }
