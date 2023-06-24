@@ -1,6 +1,6 @@
 CC=gcc
 
-all: main.o holberton.o
+all: main.c  school.c
 	$(CC) -o holberton main.o holberton.o
 
 clean:
