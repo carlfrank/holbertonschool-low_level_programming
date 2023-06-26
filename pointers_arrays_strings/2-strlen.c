@@ -5,7 +5,7 @@
  * @str: the string to get the lengh of
  * Return: the lengh of @str
  */
-int _strlen(char *s);
+int _strlen(char *s)
 
 {
 	int c = o;
