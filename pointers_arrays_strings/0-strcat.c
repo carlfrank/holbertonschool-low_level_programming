@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * _strcat - 
+ * _strcat - function that concatenates two strings
  *
- * Return:
+ * Return: a pointer to the resulting string dest
  */
 char *_strcat(char *dest, char *src)
 {
@@ -14,9 +14,9 @@ char *_strcat(char *dest, char *src)
 
 	for (c = 0; src[c] != '\n'; c++)
 	{
-		dest[i] = src[c];
-		i++;
+	dest[i] = src[c];
+	i++;
 	}
-		dest[i] = '\0';
-		return(dest);
+	dest[i] = '\0';
+	return(dest);
 }
