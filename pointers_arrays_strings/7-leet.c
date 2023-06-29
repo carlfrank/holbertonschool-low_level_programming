@@ -1,30 +1,26 @@
 #include "main.h"
-#include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 
 /**
- * leet - Write a function that encodes a string into 1337
- * @s: string
- * Return: encoded string s
+ * main - check the code
+ *
+ * Return: Always 0.
  */
-
-char *leet(char *s)
+int main(void)
 {
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		while (s[i] == 'a' || s[i] == 'A')
-			s[i] = '4';
-		while (s[i] == 'e' || s[i] == 'E')
-			s[i] = '3';
-		while (s[i] == 'o' || s[i] == 'O')
-			s[i] = '0';
-		while (s[i] == 't' || s[i] == 'T')
-			s[i] = '7';
-		while (s[i] == 'l' || s[i] == 'L')
-			s[i] = '1';
-	}
-
-	return (s);
+    int c3[3][3] = {
+        {0, 1, 5},
+        {10, 11, 12},
+        {1000, 101, 102},
+    };
+    int c5[5][5] = {
+        {0, 1, 5, 12124, 1234},
+        {10, 11, 12, 123521, 12512},
+        {1000, 101, 102, 12545, 214543435},
+        {100, 1012451, 11102, 12545, 214543435},
+        {10, 12401, 10452, 11542545, 1214543435},
+    };
+    print_diagsums((int *)c3, 3);
+    print_diagsums((int *)c5, 5);
+    return (0);
 }
