@@ -2,19 +2,18 @@
 #include "main.h"
 
 /**
- * _puts_recursion - Write a function that prints a string, followed by a new line.
- * @s:
- *
- * Return: always 0
+ * _puts_recursion - prints a string
+ * @s: string
  */
 
 void _puts_recursion(char *s)
 {
 	if (*s == '\0')
-		putchar("\n");
-	else
 	{
-		putchar(*s);
-		_puts_recursion(++s);
+		_putchar('\n');
+		return;
 	}
+	_putchar(*s);
+	s++;
+	_puts_recursion(s);
 }
