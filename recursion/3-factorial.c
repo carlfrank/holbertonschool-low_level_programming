@@ -15,5 +15,5 @@ int factorial(int n)
 	else if (n < 2)
 		return (n);
 	else
-		return (n * factorial (n - 1));
+		return (n * factorial(n - 1));
 }
