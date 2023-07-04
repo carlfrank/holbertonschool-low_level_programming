@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include "main.h"
+/**
+ * is_prime - Write a function that returns 1 if the input integer is a prime number, otherwise return 0
+ * @n: int number
+ * Return: 1 if prime, 0 otherwise
+ */
 
 int is_prime(int n, int divisor)
 {
