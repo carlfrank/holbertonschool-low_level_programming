@@ -2,9 +2,13 @@
 #include "main.h"
 /**
  * is_prime - Write a function that returns 1, otherwise return 0
- * is_prime_number - Write a function that returns 1 if the input integer
- * @n: int number
  * @divisor: divisor1
+ * Return: 1 if prime, 0 otherwise
+ */
+
+/**
+ * is_prime_number - write a function that returns 1 if the input integer
+ * @n: int number
  * Return: 1 if prime, 0 otherwise
  */
 
