@@ -3,12 +3,7 @@
 /**
  * is_prime - Write a function that returns 1, otherwise return 0
  * @divisor: divisor1
- * Return: 1 if prime, 0 otherwise
- */
-
-/**
- * is_prime_number - write a function that returns 1 if the input integer
- * @n: int number
+ * @n: string
  * Return: 1 if prime, 0 otherwise
  */
 
@@ -24,6 +19,12 @@ int is_prime(int n, int divisor)
 		return (1);
 	return (is_prime(n, divisor + 2));
 }
+
+/**
+ * is_prime_number - write a fucntion that returns 0 if the input integer
+ * @n: string
+ * Return: 1 if prime, 0 otherwise
+ */
 
 int is_prime_number(int n)
 {
