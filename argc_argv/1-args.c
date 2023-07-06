@@ -1,14 +1,14 @@
-#include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 
 /**
- * main - print the name of the program
+ * main - Print the name of the program
  * @argc: argument count
  * @argv: argument vector
+ * Return: 0 on success
  */
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i;
 
