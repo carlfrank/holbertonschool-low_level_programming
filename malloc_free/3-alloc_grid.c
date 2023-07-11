@@ -1,13 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * alloc_grid - create a 2d integer grid using malloc.
- * Description - each element of the grid should be initialized
- * @weidth: int the size width
+ * Description: Each element of the grid should be initialized to 0.
+ * @width: int size width
  * @height: int size height
- * Return: pointer to new grid
+ * Return: Pointer to new grid
  */
 
 int **alloc_grid(int width, int height)
@@ -15,7 +14,7 @@ int **alloc_grid(int width, int height)
 	int **grid;
 	int i, j;
 
-	if (width + height < 2 || height < 1)
+	if (width + height < 2 || width < 1 || height < 1)
 		return (NULL);
 
 	grid = malloc(height * sizeof(*grid));
@@ -35,5 +34,6 @@ int **alloc_grid(int width, int height)
 		for (j = 0; j < width; j++)
 			grid[i][j] = 0;
 	}
+
 	return (grid);
 }
