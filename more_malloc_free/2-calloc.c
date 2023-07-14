@@ -5,7 +5,7 @@
 
 /**
  * _calloc - allocated memory of an array
- * @nmemd: n of bytes in mem block
+ * @nmemb: n of bytes in mem block
  * @size: size
  * Return: pointer with allocated memory
  */
@@ -25,7 +25,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	for (i = 0; i < j; i++)
 
-			call[i] = 0;
+		call[i] = 0;
 
 	return (call);
 }
