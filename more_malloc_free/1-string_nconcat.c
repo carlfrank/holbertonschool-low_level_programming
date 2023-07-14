@@ -1,20 +1,19 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 /**
- * string_nconcat - write a funcion that concatenates two strings
- * @s1: string 1
- * @s2: string 2
- * @n: unsigned int
- * Return: return 0
+ *string_nconcat- gets user inputs
+ *@s1: stores firsrt input
+ *@s2: stores second input
+ *@n: stores counter
+ *Return: results
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	int i, j;
+	unsigned int i, x;
+	char *s3;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -24,22 +23,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n > strlen(s2))
 		n = strlen(s2);
 
-	ptr = malloc (strlen(s1) + n + 1);
+	s3 = malloc(strlen(s1) + n + 1);
 
-	if (ptr == NULL)
+	if (s3 == NULL)
 		return (NULL);
 
 	for (i = 0; s1[i] != '\0'; i++)
 	{
-		ptr[i] = s1[i];
+		s3[i] = s1[i];
 	}
-	for (j = 0; s2[2] != '\0' && j < n; j++, i++)
-}
-for (j = 0; s2[j] != '\0'; j++)
-{
-	ptr[j] = s2[j];
-}
-ptr[i] = '\0';
+	for (x = 0; s2[x] != '\0' && x < n; x++, i++)
+	{
+		s3[i] = s2[x];
+	}
+	s3[i] = '\0';
 
-return (ptr);
+	return (s3);
 }
