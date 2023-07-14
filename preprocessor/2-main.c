@@ -5,7 +5,7 @@
  * Return: always 0
  */
 
-void main(void)
+void int(void)
 {
 
 	printf("%s\n", __FILE__);
