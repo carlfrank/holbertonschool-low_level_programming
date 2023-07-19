@@ -1,29 +1,29 @@
 #include "function_pointers.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * int_index - Write a function that searches for an integer.
- * @array: int
- * @size: int
- * @cmp: int
- * Return: always 0
+ *int_index- gets users input
+ *@array: stores first input
+ *@size: stores second input
+ *@cmp: stores functions value
+ *Return: results
  */
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i;
+	int counter;
 
-	if (array != NULL && cmp != NULL)
+	if (array == NULL || cmp == NULL || size <= 0)
 	{
 		return (-1);
 	}
 
-		for (i = 0; i < size; i++)
+	for (counter = 0; counter < size; counter++)
+	{
+		if (cmp(array[counter]) != 0)
 		{
-			if (cmp(array[i] != 0))
-			{
-				return (i);
-			}
+			return (counter);
+		}
 	}
 	return (-1);
 }
