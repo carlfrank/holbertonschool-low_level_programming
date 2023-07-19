@@ -5,6 +5,7 @@
  * array_iterator - Write a function that executes a function.
  * @array: int
  * @action: int
+ * @size: size_t
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
