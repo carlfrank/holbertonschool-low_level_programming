@@ -14,18 +14,18 @@ int main (int argc, char *argv[])
 		printf ("error\n");
 		exit (98);
 	}
-
-	int n1 = atoi(argv[1]);
-	int n2 = atoi(argv[3]);
-
 	if (get_op_func(argv[2]) == NULL)
+	{
 		printf("error\n");
 		exit(99);
+	}
 
 	if (argv[2] ==/ || argv[2] ==% && atoi(argv[3]) == 0)
+	{
 		printf ("error\n");
 		exit(100);
+	}
 
-		printf("%d\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
-		return (0);
+	printf("%d\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
+	return (0);
 }
