@@ -19,13 +19,13 @@ int main (int argc, char *argv[])
 	int n2 = atoi(argv[3]);
 
 	if (get_op_func(argv[2]) == NULL)
-		prinf("error\n");
+		printf("error\n");
 		exit(99);
 
-	if (argv[2] ==/ || argv[2] ==% && n2 == 0)
+	if (argv[2] ==/ || argv[2] ==% && atoi(argv[3]) == 0)
 		printf ("error\n");
 		exit(100);
 
-		printf("%d\n", get_op_func(argv[2],(n1,n2));
+		printf("%d\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
 		return (0);
 }
