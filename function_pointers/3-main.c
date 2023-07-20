@@ -11,18 +11,18 @@ int main (int argc, char *argv[])
 {
 	if (argc != 4)
 	{
-		printf ("error\n");
+		printf ("Error\n");
 		exit (98);
 	}
 	if (get_op_func(argv[2]) == NULL)
 	{
-		printf("error\n");
+		printf("Error\n");
 		exit(99);
 	}
 
 	if (atoi(argv[3]) == 0)
 	{
-		printf ("error\n");
+		printf ("Error\n");
 		exit(100);
 	}
 
