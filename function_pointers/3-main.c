@@ -1,9 +1,10 @@
 #include "3-calc.h"
 
 /**
- *
- *
- *
+ * main - This file should contain your main function only
+ * @argc: int
+ * @argv: array
+ * Return: always 0
  */
 
 int main (int argc, * argv[])
@@ -17,7 +18,7 @@ int main (int argc, * argv[])
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[3]);
 
-	if (set_op_func(argv[2], (n1, n2)) == NULL)
+	if (get_op_func(argv[2], (n1, n2)) == NULL)
 		prinf("error\n");
 		exit(99);
 
@@ -25,5 +26,6 @@ int main (int argc, * argv[])
 		printf ("error\n");
 		exit(100);
 
-		return (printf("%d\n", get_op_func(argv[2],(n1,n2));
+		printf("%d\n", get_op_func(argv[2],(n1,n2));
+		return (0);
 }
