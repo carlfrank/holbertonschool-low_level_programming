@@ -7,14 +7,12 @@
  */
 size_t list_len(const list_t *h)
 {
-	const list_t *current;
-	size_t c;
+	
+	size_t c = 0;
 
-	c = 0;
-	current = h;
-	while (current != NULL)
+	while ( h != NULL)
 	{
-		current = current->next;
+		h = h->next;
 		c++;
 	}
 
