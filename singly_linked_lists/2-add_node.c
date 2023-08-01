@@ -12,7 +12,9 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_node;
 	int c;
+
 	new_node = malloc(sizeof(list_t));
+	
 	new_node->str = strdup(str);
 
 	for (c = 0; new_node->str[c] != '\0'; c++)
