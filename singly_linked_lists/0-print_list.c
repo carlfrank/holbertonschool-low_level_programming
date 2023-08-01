@@ -9,15 +9,15 @@ size_t print_list(const list_t *h)
 {
 	size_t i = 0; /* counts number of elements */
 
-	while(h != NULL) /* checks  if struck has data*/
+	while (h != NULL) /* checks  if struck has data*/
 	{
-		if(h->str == NULL) /*checks if str id null if true return [0] (nil) else print it*/
+		if (h->str == NULL) /*checks if str id null if true return [0]*/
 		printf("[0] (nil)\n");
 		else
-		printf("[%d] %s\n",h->len, h->str);
+		printf("[%d] %s\n", h->len, h->str);
 
 		h = h->next; /* goes to the next entry*/
-		i++; 
+		i++;
 	}
 	return (i);
 }
