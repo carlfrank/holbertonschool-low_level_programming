@@ -5,18 +5,18 @@
  */
 int main(void)
 {
-	int x, y, z;
+	int num, num2, num3;
 
-	for (x = '0'; x <= '9'; x++)
+	for (num = '0'; num <= '9'; num++)
 	{
-		for (y = x + 1; y <= '9'; y++)
+		for (num2 = num + 1; num2 <= '9'; num2++)
 		{
-			for (z = y + 1; z <= '9'; z++)
+			for (num3 = num2 + 1; num3 <= '9'; num3++)
 			{
-				putchar(x);
-				putchar(y);
-				putchar(z);
-				if (x  == '7' && y == '8' && z == '9')
+				putchar(num);
+				putchar(num2);
+				putchar(num3);
+				if (num  == '7' && num2 == '8' && num3 == '9')
 				{
 					continue;
 				}
@@ -27,3 +27,4 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
+}
