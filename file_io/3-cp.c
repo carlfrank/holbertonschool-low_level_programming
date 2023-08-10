@@ -1,83 +1,71 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-
-void error_file_from(char *, char *);
-void error_file_to(char *, char *);
-void error_close(int, char *);
 
 /**
- * copy_file - copies a file to another
- * @file_to: file to copy to
- * @file_from: file to copy from
- * Return: 0
+ * main - main function
+ * @argc: count of arguments
+ * @argv: array of arguments
+ * Return: number
  */
 
-// Función para copiar un archivo a otro
-int copy_file(char *file_to, char *file_from)
+int main(int argc, char *argv[])
 {
-	int to, from, wr, err, re;
-	char *buf;
+	int fd_f, fd_t, c1, c2;
+	char *file_f = argv[1];
+	char *file_t = argv[2];
+	char *buff[1024];
 
-	// Se asigna memoria para un buffer de lectura/escritura
-	buf = malloc(sizeof(char) * 1024);
-	if (!buf)
-		return (0);
+	if (argc != 3)
+		argc_fail();
 
-	// Se abre el archivo de origen en modo lectura
-	from = open(file_from, O_RDONLY);
-	if (from == -1)
-		error_file_from(file_from, buf);
+	fd_f = open(file_f, O_RDONLY);
+	if (fd_f == -1 || file_f == NULL)
+		error_and_exit("Can't read from file", file_f, 98);
 
-	// Se abre o crea el archivo de destino en modo escritura
-	to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (to == -1)
-		error_file_to(file_to, buf);
+	fd_t = open(file_t, O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	if (fd_t == -1 || file_t == NULL)
+		error_and_exit("Can't write to", file_t, 99);
 
-	// Se lee una cantidad de datos del archivo de origen y se copian al archivo de destino
-	re = read(from, buf, 1024);
-
-	do {
-		if (re == -1)
-			error_file_from(file_from, buf);
-		if (re == 0)
+	while (1)
+	{
+		c1 = read(fd_f, buff, 1024);
+		if (c1 == 0)
 			break;
-		// Se escribe la cantidad de datos leídos en el archivo de destino
-		wr = write(to, buf, re);
-		if (wr == -1)
-			error_file_to(file_to, buf);
-		// Se vuelve a leer del archivo de origen
-		re = read(from, buf, 1024);
-	} while (re > 0);
+		if (c1 == -1)
+			error_and_exit("Can't read from file", file_f, 98);
 
-	// Se cierran los archivos
-	err = close(to);
-	if (err == -1)
-		error_close(to, buf);
-	err = close(from);
-	if (err == -1)
-		error_close(from, buf);
+		c2 = write(fd_t, buff, c1);
+		if (c2 == -1)
+			error_and_exit("Can't write to", file_t, 99);
+	}
 
-	// Se libera la memoria asignada al buffer
-	free(buf);
+	if (close(fd_f) == -1)
+		error_and_exit("Can't close fd", file_f, 100);
+
+	if (close(fd_t) == -1)
+		error_and_exit("Can't close fd", file_t, 100);
+
 	return (0);
 }
 
 /**
- * error_close - error procedure when issue with closing
- * @fd: integer where file is opened
- * @buf: buffer to free
- * Return: void
+ * argc_fail - fucntion to help with checking for error
  */
-// Función para manejar el error de cierre de archivo
-void error_close(int fd, char *buf)
+
+void argc_fail(void)
 {
-	free(buf);
-	// Liberar la memoria asignada para el buffer
-	// Imprimir mensaje de error en la salida de error estándar (stderr)
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-	// Salir del programa con un código de error específico (100)
-	exit(100);
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+	exit(97);
+}
+
+/**
+ * error_and_exit - function to help with errors
+ * @message: message to add
+ * @filename: filename
+ * @exit_code: exit code of the error
+ */
+
+void error_and_exit(const char *message, const char *filename, int exit_code)
+{
+	dprintf(STDERR_FILENO, "Error: %s %s\n", message, filename);
+	exit(exit_code);
 }
