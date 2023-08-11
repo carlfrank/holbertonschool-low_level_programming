@@ -51,9 +51,9 @@ int main(int argc, char *argv[])
  * argc_fail - fucntion to help with checking for error
  */
 
-void argc_fail(void)
+void argc_faiml(void)
 {
-	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+	fprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 }
 
@@ -66,6 +66,6 @@ void argc_fail(void)
 
 void error_and_exit(const char *message, const char *filename, int exit_code)
 {
-	dprintf(STDERR_FILENO, "Error: %s %s\n", message, filename);
+	fprintf(STDERR_FILENO, "Error: %s %s\n", message, filename);
 	exit(exit_code);
 }
